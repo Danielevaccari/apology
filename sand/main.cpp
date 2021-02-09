@@ -8,13 +8,21 @@
 #include <iostream>
 using namespace std;
 
+bool game = true;
+
 string word = "car";
+int guessesLeft = 6;
 
 //Asks the player to enter a word that is used to play hangman
 void wordSetter(){
     cout << "Please input your word:" << endl;
     cin >> word;
 }
+//Subtracts one from total guesses
+void minusOneGuess(){
+    guessesLeft -= 1;
+}
+
 
 //Checks if the word has the character or not
 bool isThisCharacterInWord(char a){
