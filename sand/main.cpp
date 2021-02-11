@@ -10,8 +10,21 @@ using namespace std;
 
 bool game = true;
 
-string word = "car";
+
 int guessesLeft = 6;
+string word = "car";
+char wordBody [15] = {};
+
+void guessCharacter(){
+    char c;
+    cin >> c;
+    for (int x = 0; x < word.length(); x++){
+        if (word[x] == c){
+            wordBody[x] = c;
+        }
+    }
+}
+
 
 //Asks the player to enter a word that is used to play hangman
 void wordSetter(){
@@ -35,10 +48,11 @@ bool isThisCharacterInWord(char a){
         return false;
     }
 int main() {
-    int long num = 9999;
-    int long *p = &num;
+    guessCharacter();
     
-    cout << isThisCharacterInWord('r') << endl;
+    for (int x = 0; x < word.length(); x++){
+        cout << wordBody[x] << endl;
+    }
     
     return 0;
 }
