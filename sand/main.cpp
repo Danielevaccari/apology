@@ -13,8 +13,17 @@ bool game = true;
 
 int guessesLeft = 6;
 string word = "car";
-char wordBody [15] = {};
+char wordBody [16] = {};
 
+//Prints out already guessed characters
+void printOutWordBody(){
+    for (int x = 0; x < word.length(); x++){
+        cout << wordBody[x];
+    }
+    cout << endl;
+}
+
+//Lets player guess character and locates it to the right index
 void guessCharacter(){
     char c;
     cin >> c;
@@ -49,11 +58,9 @@ bool isThisCharacterInWord(char a){
     }
 int main() {
     guessCharacter();
-    
-    for (int x = 0; x < word.length(); x++){
-        cout << wordBody[x] << endl;
-    }
-    
+    guessCharacter();
+    guessCharacter();
+    printOutWordBody();
     return 0;
 }
 
